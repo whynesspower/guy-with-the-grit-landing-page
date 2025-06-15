@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -116,7 +117,7 @@ export const Header = () => {
               <div className="flex items-center">
                 <div className="text-white text-xl font-bold flex items-center space-x-3">
                   <ArrowRight className="w-5 h-5" />
-                  <span>sanas</span>
+                  <span>SalesKat</span>
                 </div>
               </div>
               
