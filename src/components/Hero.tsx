@@ -6,11 +6,11 @@ export const Hero = () => {
   return (
     <section className="relative h-screen bg-gray-100 overflow-hidden flex items-center">
       {/* Animated concentric semi-circles with gradient shadows */}
-      <div className="absolute inset-0 flex items-end justify-center">
+      <div className="absolute inset-0 flex items-end justify-center z-0">
         <div className="relative">
           {/* Largest semi-circle */}
           <div 
-            className="absolute bottom-0 w-96 h-48 bg-white rounded-t-full shadow-2xl animate-pulse"
+            className="absolute bottom-0 w-[72rem] h-[36rem] bg-white rounded-t-full shadow-2xl animate-pulse"
             style={{ left: '50%', transform: 'translateX(-50%)' }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-t-full blur-2xl"></div>
@@ -18,7 +18,7 @@ export const Hero = () => {
           
           {/* Medium semi-circle */}
           <div 
-            className="absolute bottom-0 w-80 h-40 bg-white rounded-t-full shadow-2xl animate-pulse"
+            className="absolute bottom-0 w-[60rem] h-[30rem] bg-white rounded-t-full shadow-2xl animate-pulse"
             style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '0.5s' }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-300/50 to-transparent rounded-t-full blur-2xl"></div>
@@ -26,7 +26,7 @@ export const Hero = () => {
           
           {/* Smallest semi-circle */}
           <div 
-            className="absolute bottom-0 w-64 h-32 bg-white rounded-t-full shadow-xl animate-pulse"
+            className="absolute bottom-0 w-[48rem] h-[24rem] bg-white rounded-t-full shadow-xl animate-pulse"
             style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '1s' }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-200/40 to-blue-200/40 rounded-t-full blur-xl"></div>
@@ -35,7 +35,7 @@ export const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative w-full">
+      <div className="relative w-full z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center mb-16">
             <div className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 flex items-center space-x-3 shadow-lg">
