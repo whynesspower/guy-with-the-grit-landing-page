@@ -51,17 +51,17 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Clean curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
+      {/* Simple curved bottom section - single curve only */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
         <svg 
-          viewBox="0 0 1440 120" 
+          viewBox="0 0 1440 100" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg" 
           className="w-full h-full"
           preserveAspectRatio="none"
         >
           <path 
-            d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" 
+            d="M0,100 Q720,0 1440,100 L1440,100 L0,100 Z" 
             fill="url(#gradientHero)"
           />
           <defs>
