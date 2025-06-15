@@ -81,7 +81,7 @@ export const Features = () => {
         {/* Two main feature cards with increased height */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Accent Translation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[980px] flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[480px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
               <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
@@ -113,7 +113,7 @@ export const Features = () => {
           </Card>
 
           {/* Noise Cancellation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[980px] flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[480px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
               <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
