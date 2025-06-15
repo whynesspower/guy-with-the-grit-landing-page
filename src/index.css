@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -118,3 +117,6 @@
 .animate-pulse {
   animation: wave-pulse 4s ease-in-out infinite;
 }
+
+/* ANIMATION for Footer rotating list (step scroll) */
+/* (Optional: for smooth transitions, possibly for future improvements) */
