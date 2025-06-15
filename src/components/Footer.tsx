@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 
 const WORDS = [
@@ -10,29 +9,6 @@ const WORDS = [
   "Accuracy",
   "Opportunity",
 ];
-
-// Helper for a curved SVG path as a clipping mask
-function FooterCurve({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="footer-curve relative overflow-hidden bg-black">
-      {/* The SVG creates the top curve */}
-      <svg
-        className="absolute top-0 left-0 w-full h-[22vw] min-h-[150px] max-h-[320px] -translate-y-1 pointer-events-none z-10"
-        viewBox="0 0 1920 320"
-        fill="none"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,320 C600,0 1320,0 1920,320 L1920,0 L0,0 Z"
-          fill="black"
-        />
-      </svg>
-      <div className="relative pt-[9vw] pb-8 flex flex-col items-center z-20">
-        {children}
-      </div>
-    </div>
-  );
-}
 
 // Each vertical word component
 function VerticalText({
@@ -55,6 +31,9 @@ function VerticalText({
         textShadow: highlighted
           ? "0 2px 16px #fff8"
           : "none",
+        transition: "color 0.3s, font-size 0.3s",
+        margin: 0,
+        padding: 0,
       }}
     >
       {text}
@@ -62,48 +41,97 @@ function VerticalText({
   );
 }
 
-const VISIBLE_COUNT = 19; // How many verticals to show at once
-const ITEM_GAP = 32; // px between each word, adjust for density
+const ITEM_GAP = 8; // DENSE: Reduced gap px between each word
 
 const FooterCarousel: React.FC = () => {
+  const [offset, setOffset] = useState(0);
   const [highlightedIdx, setHighlightedIdx] = useState(0);
 
-  // To fill curve: repeat words much more (at least 2x visible count)
-  const repeatedWords = Array(4)
+  // Repeat enough words to fill screen multiple times for fake "infinite" carousel effect
+  const MIN_WORDS_SHOWN = 50;
+  const repeatedWords = Array(Math.ceil(MIN_WORDS_SHOWN / WORDS.length) + 2)
     .fill(WORDS)
     .flat();
 
+  // Carousel Reference for width
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const wordRef = useRef<HTMLDivElement | null>(null);
+  const [wordWidth, setWordWidth] = useState(0);
+
+  // Measure vertical word real width
   useEffect(() => {
-    const interval = setInterval(() => {
-      setHighlightedIdx((prev) => (prev + 1) % WORDS.length);
-    }, 1900);
-    return () => clearInterval(interval);
+    if (wordRef.current) {
+      setWordWidth(wordRef.current.offsetWidth + ITEM_GAP);
+    }
   }, []);
 
-  // Animate leftwards movement using translateX
-  const [movePx, setMovePx] = useState(0);
+  // Animate the offset to the left, loop when it passes one word's width
   useEffect(() => {
-    setMovePx(highlightedIdx * (28 + ITEM_GAP));
-  }, [highlightedIdx]);
+    const interval = setInterval(() => {
+      setOffset((curOffset) => {
+        // When one word scrolled, loop seamlessly
+        if (wordWidth && curOffset >= wordWidth * WORDS.length) {
+          return 0;
+        }
+        return curOffset + 2; // pixels per frame, adjust for speed
+      });
+      // Highlight as the next word becomes center: calculate based on offset
+      if (wordWidth) {
+        setHighlightedIdx((curIdx) => (Math.floor((offset + wordWidth / 2) / wordWidth) % WORDS.length));
+      }
+    }, 16); // ~60fps
+    return () => clearInterval(interval);
+  }, [offset, wordWidth]);
+
+  // Always only one word highlighted (those from primary set, not from repeats)
+  // We only highlight the word that is centered in the viewport,
+  // If centered highlight index matches the main set, highlight that
 
   return (
     <div
       className="w-full flex items-center justify-center relative overflow-x-hidden"
-      style={{ height: 220 }}
+      style={{
+        height: 220,
+        background: "transparent",
+        zIndex: 2, // above curve
+        marginTop: "-32px", // pull up to fill curve area but not under it
+        pointerEvents: "none", // Make sure not clickable over links
+      }}
     >
       <div
-        className="flex items-end transition-transform duration-700 ease-[cubic-bezier(0.66,0,0.33,1)]"
+        className="flex items-end transition-none"
         style={{
           gap: ITEM_GAP,
-          transform: `translateX(calc(50vw - 50% - ${movePx}px))`,
-          // This centers the highlighted word in viewport.
+          transform: `translateX(-${offset}px)`,
+          willChange: "transform",
+          minWidth: "100vw",
         }}
+        ref={containerRef}
       >
         {repeatedWords.map((word, idx) => {
-          // Get which word should be highlighted, looping every WORDS.length
-          const highlight = idx % WORDS.length === highlightedIdx;
+          // Only one highlight: Highlight the word that's closest to the center.
+          let highlight = false;
+          // Calculate the left position of this word in pixels (approximate)
+          const left = idx * wordWidth - offset;
+          // Get viewport center:
+          const center = typeof window !== "undefined" ? window.innerWidth / 2 : 400;
+          // We want to highlight the word whose center is closest to window center
+          if (wordWidth) {
+            const wordCenter = left + wordWidth / 2;
+            if (Math.abs(wordCenter - center) < wordWidth / 2) {
+              highlight = true;
+            }
+          }
           return (
-            <div key={idx} className="flex flex-col items-center">
+            <div
+              key={idx}
+              ref={idx === 0 ? wordRef : undefined}
+              className="flex flex-col items-center"
+              style={{
+                minWidth: 32,
+                userSelect: "none",
+              }}
+            >
               <VerticalText text={word} highlighted={highlight} />
             </div>
           );
@@ -113,9 +141,32 @@ const FooterCarousel: React.FC = () => {
   );
 };
 
+// Footer curve remains unchanged
+function FooterCurve({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="footer-curve relative overflow-hidden bg-black">
+      {/* The SVG creates the top curve */}
+      <svg
+        className="absolute top-0 left-0 w-full h-[22vw] min-h-[150px] max-h-[320px] -translate-y-1 pointer-events-none z-10"
+        viewBox="0 0 1920 320"
+        fill="none"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,320 C600,0 1320,0 1920,320 L1920,0 L0,0 Z"
+          fill="black"
+        />
+      </svg>
+      <div className="relative pt-[9vw] pb-8 flex flex-col items-center z-20">
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export const Footer = () => {
   return (
-    <footer className="relative bg-black text-white">
+    <footer className="relative bg-black text-white overflow-x-clip">
       <FooterCurve>
         {/* Center "logo": use a placeholder icon, replace with your SVG if needed */}
         <div className="flex justify-center mb-6">
@@ -139,9 +190,8 @@ export const Footer = () => {
         </div>
       </FooterCurve>
       {/* Curve border rides above carousel */}
-      <div style={{ marginTop: "-60px" }}>
-        <FooterCarousel />
-      </div>
+      {/* Place under curve but above very bottom */}
+      <FooterCarousel />
     </footer>
   );
 };
