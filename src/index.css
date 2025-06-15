@@ -132,3 +132,26 @@
 }
 
 /* No new keyframes needed since we're using transform with transition */
+
+/* Custom curve for footer background, fill with black */
+.footer-curve {
+  border-top-left-radius: 48vw 15vw;
+  border-top-right-radius: 52vw 13vw;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  min-height: 230px;
+  z-index: 1;
+  width: 100vw;
+}
+
+/* Remove default arrow and drop-shadow on icon: handled in Footer now */
+
+/* Responsive carousel tweaks */
+@media (max-width: 600px) {
+  .footer-curve {
+    min-height: 120px;
+    border-top-left-radius: 68vw 23vw;
+    border-top-right-radius: 72vw 16vw;
+  }
+}
