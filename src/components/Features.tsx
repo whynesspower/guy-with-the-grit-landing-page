@@ -34,20 +34,29 @@ export const Features = () => {
 
   return (
     <section className="h-screen bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden flex flex-col justify-center">
-      {/* Curved top section */}
-      <div className="absolute top-0 left-0 right-0 h-32">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="#f3f4f6"/>
+      {/* Smooth curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-24 overflow-hidden">
+        <svg 
+          viewBox="0 0 1440 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,0 C360,100 1080,100 1440,0 L1440,0 L0,0 Z" 
+            fill="#f3f4f6"
+          />
         </svg>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative flex-1 flex flex-col justify-center">
-        <div className="text-center mb-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative flex-1 flex flex-col justify-center py-24">
+        <div className="text-center mb-12">
           <p className="text-gray-600 text-sm uppercase tracking-wider mb-4">What we do</p>
         </div>
 
-        <div className="text-center mb-16">
-          <h2 id="animated-text" className="text-4xl lg:text-5xl font-bold leading-tight mb-8 max-w-3xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 id="animated-text" className="text-4xl lg:text-5xl font-bold leading-tight mb-8 max-w-2xl mx-auto">
             {words.map((word, index) => (
               <span
                 key={index}
@@ -61,12 +70,12 @@ export const Features = () => {
           </h2>
         </div>
 
-        {/* Two main feature cards */}
+        {/* Two main feature cards with increased height */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Accent Translation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[500px] flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[700px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
-              <div className="mb-6">
+              <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
                 </div>
@@ -77,27 +86,28 @@ export const Features = () => {
                 </p>
               </div>
               
-              {/* Circular visualization with animation */}
+              {/* Enhanced circular visualization with smoother animation */}
               <div className="flex justify-center mt-auto">
                 <div className="relative">
-                  <div className="w-32 h-32 border-2 border-green-400 rounded-full flex items-center justify-center animate-pulse">
-                    <div className="w-24 h-24 border border-green-400/50 rounded-full flex items-center justify-center animate-pulse" style={{ animationDelay: '0.5s' }}>
-                      <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center">
-                        <ArrowRight className="w-6 h-6 text-white" />
+                  <div className="w-40 h-40 border-2 border-green-400 rounded-full flex items-center justify-center animate-pulse">
+                    <div className="w-32 h-32 border border-green-400/50 rounded-full flex items-center justify-center animate-pulse" style={{ animationDelay: '0.5s' }}>
+                      <div className="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center">
+                        <ArrowRight className="w-8 h-8 text-white" />
                       </div>
                     </div>
                   </div>
-                  {/* Rotating outer ring */}
-                  <div className="absolute inset-0 w-32 h-32 border-2 border-transparent border-t-green-400 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
+                  {/* Enhanced rotating outer rings */}
+                  <div className="absolute inset-0 w-40 h-40 border-2 border-transparent border-t-green-400 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
+                  <div className="absolute inset-2 w-36 h-36 border border-transparent border-r-green-400/70 rounded-full animate-spin" style={{ animationDuration: '4s', animationDirection: 'reverse' }}></div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Noise Cancellation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[500px] flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[700px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
-              <div className="mb-6">
+              <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
                 </div>
@@ -108,31 +118,31 @@ export const Features = () => {
                 </p>
               </div>
               
-              {/* Audio visualization with animation */}
+              {/* Enhanced audio visualization with smoother animation */}
               <div className="flex justify-center items-center mt-auto">
                 <div className="flex items-center space-x-1">
-                  {[...Array(20)].map((_, i) => (
+                  {[...Array(24)].map((_, i) => (
                     <div 
                       key={i} 
                       className="w-1 bg-green-400 rounded-full animate-pulse"
                       style={{ 
-                        height: `${Math.random() * 40 + 10}px`,
-                        animationDelay: `${i * 0.1}s`,
-                        animationDuration: '1.5s'
+                        height: `${Math.sin(i * 0.5) * 30 + 20}px`,
+                        animationDelay: `${i * 0.08}s`,
+                        animationDuration: '1.2s'
                       }}
                     ></div>
                   ))}
-                  <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mx-4">
-                    <ArrowRight className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mx-6">
+                    <ArrowRight className="w-8 h-8 text-white" />
                   </div>
-                  {[...Array(20)].map((_, i) => (
+                  {[...Array(24)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-1 bg-green-400/30 rounded-full animate-pulse"
+                      className="w-1 bg-green-400/40 rounded-full animate-pulse"
                       style={{ 
-                        height: `${10}px`,
-                        animationDelay: `${i * 0.1 + 1}s`,
-                        animationDuration: '2s'
+                        height: `${12}px`,
+                        animationDelay: `${i * 0.08 + 1}s`,
+                        animationDuration: '1.8s'
                       }}
                     ></div>
                   ))}
@@ -143,10 +153,19 @@ export const Features = () => {
         </div>
       </div>
 
-      {/* Curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" fill="#000000"/>
+      {/* Smooth curved bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+        <svg 
+          viewBox="0 0 1440 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,100 C360,0 1080,0 1440,100 L1440,100 L0,100 Z" 
+            fill="#000000"
+          />
         </svg>
       </div>
     </section>

@@ -1,15 +1,25 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const HowItWorks = () => {
   return (
     <section className="h-screen bg-black text-white relative overflow-hidden flex flex-col justify-center">
-      {/* Curved top section */}
-      <div className="absolute top-0 left-0 right-0 h-32">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="url(#gradient2)"/>
+      {/* Smooth curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-24 overflow-hidden">
+        <svg 
+          viewBox="0 0 1440 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,0 C360,100 1080,100 1440,0 L1440,0 L0,0 Z" 
+            fill="url(#gradientHowIt)"
+          />
           <defs>
-            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="gradientHowIt" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#dcfce7" />
               <stop offset="50%" stopColor="#ffffff" />
               <stop offset="100%" stopColor="#dbeafe" />
@@ -18,7 +28,7 @@ export const HowItWorks = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center py-24">
         <div className="text-center mb-8">
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-4">Our Impact</p>
         </div>
@@ -41,7 +51,6 @@ export const HowItWorks = () => {
             </p>
           </div>
 
-          {/* Main Image Card */}
           <div className="bg-gray-900 rounded-3xl p-8 relative overflow-hidden lg:row-span-2">
             <img 
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=800&fit=crop" 
@@ -59,7 +68,6 @@ export const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Boost Satisfaction */}
           <div className="bg-gray-900 rounded-3xl p-8">
             <h3 className="text-2xl font-bold mb-4">Boost satisfaction</h3>
             <p className="text-gray-300 leading-relaxed">
@@ -67,7 +75,6 @@ export const HowItWorks = () => {
             </p>
           </div>
 
-          {/* CSAT Improvement */}
           <div className="bg-gray-900 rounded-3xl p-8 lg:col-span-1 relative">
             <div className="mb-8">
               <img 
@@ -96,7 +103,6 @@ export const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Reduce Stress */}
           <div className="bg-gray-900 rounded-3xl p-8">
             <h3 className="text-2xl font-bold mb-4">Reduce stress</h3>
             <p className="text-gray-300 leading-relaxed">
@@ -105,7 +111,6 @@ export const HowItWorks = () => {
             </p>
           </div>
 
-          {/* Increase Confidence */}
           <div className="bg-gray-900 rounded-3xl p-8 relative">
             <h3 className="text-2xl font-bold mb-4">Increase confidence</h3>
             <p className="text-gray-300 leading-relaxed mb-6">
@@ -151,10 +156,19 @@ export const HowItWorks = () => {
         </div>
       </div>
 
-      {/* Curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" fill="#000000"/>
+      {/* Smooth curved bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+        <svg 
+          viewBox="0 0 1440 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,100 C360,0 1080,0 1440,100 L1440,100 L0,100 Z" 
+            fill="#000000"
+          />
         </svg>
       </div>
     </section>

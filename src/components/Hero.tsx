@@ -51,12 +51,21 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Large curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-br from-green-100 via-white to-blue-100">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" fill="url(#gradient1)"/>
+      {/* Smooth curved bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+        <svg 
+          viewBox="0 0 1440 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,100 C360,0 1080,0 1440,100 L1440,100 L0,100 Z" 
+            fill="url(#gradientHero)"
+          />
           <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="gradientHero" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#dcfce7" />
               <stop offset="50%" stopColor="#ffffff" />
               <stop offset="100%" stopColor="#dbeafe" />
