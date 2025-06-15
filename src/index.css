@@ -120,3 +120,15 @@
 
 /* ANIMATION for Footer rotating list (step scroll) */
 /* (Optional: for smooth transitions, possibly for future improvements) */
+
+/* Add for Footer's vertical rotating carousel */
+@layer components {
+  .vertical-text-carousel {
+    height: 160px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/* No new keyframes needed since we're using transform with transition */
