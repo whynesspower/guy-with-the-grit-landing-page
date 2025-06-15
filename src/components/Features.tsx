@@ -34,7 +34,7 @@ export const Features = () => {
   }, [words.length]);
 
   return (
-    <section className="h-screen bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden flex flex-col justify-center">
+    <section className="py-24 bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden">
       {/* Curved top section */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-white rounded-b-[50px]"></div>
       
@@ -44,7 +44,7 @@ export const Features = () => {
         </div>
 
         <div className="text-center mb-16">
-          <h2 id="animated-text" className="text-4xl lg:text-5xl font-bold leading-tight mb-8 max-w-2xl mx-auto">
+          <h2 id="animated-text" className="text-5xl lg:text-6xl font-bold leading-tight mb-8">
             {words.map((word, index) => (
               <span
                 key={index}
@@ -61,8 +61,8 @@ export const Features = () => {
         {/* Two main feature cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Accent Translation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-96">
-            <CardContent className="p-0 h-full flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl">
+            <CardContent className="p-0">
               <div className="mb-6">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
@@ -74,13 +74,13 @@ export const Features = () => {
                 </p>
               </div>
               
-              {/* Animated circular visualization */}
-              <div className="flex justify-center">
+              {/* Circular visualization */}
+              <div className="flex justify-center mt-12">
                 <div className="relative">
-                  <div className="w-32 h-32 border-2 border-green-400 rounded-full flex items-center justify-center animate-pulse">
-                    <div className="w-24 h-24 border border-green-400/50 rounded-full flex items-center justify-center animate-pulse" style={{ animationDelay: '0.5s' }}>
+                  <div className="w-32 h-32 border-2 border-green-400 rounded-full flex items-center justify-center">
+                    <div className="w-24 h-24 border border-green-400/50 rounded-full flex items-center justify-center">
                       <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center">
-                        <ArrowRight className="w-6 h-6 text-white animate-pulse" style={{ animationDelay: '1s' }} />
+                        <ArrowRight className="w-6 h-6 text-white" />
                       </div>
                     </div>
                   </div>
@@ -90,8 +90,8 @@ export const Features = () => {
           </Card>
 
           {/* Noise Cancellation Card */}
-          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-96">
-            <CardContent className="p-0 h-full flex flex-col justify-between">
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl">
+            <CardContent className="p-0">
               <div className="mb-6">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
@@ -103,17 +103,16 @@ export const Features = () => {
                 </p>
               </div>
               
-              {/* Animated audio visualization */}
-              <div className="flex justify-center items-center">
+              {/* Audio visualization */}
+              <div className="flex justify-center items-center mt-12">
                 <div className="flex items-center space-x-1">
                   {[...Array(20)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-1 bg-green-400 rounded-full animate-pulse"
+                      className="w-1 bg-green-400 rounded-full"
                       style={{ 
                         height: `${Math.random() * 40 + 10}px`,
-                        opacity: Math.random() * 0.8 + 0.2,
-                        animationDelay: `${i * 0.1}s`
+                        opacity: Math.random() * 0.8 + 0.2 
                       }}
                     ></div>
                   ))}
@@ -123,11 +122,8 @@ export const Features = () => {
                   {[...Array(20)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-1 bg-green-400/30 rounded-full animate-pulse"
-                      style={{ 
-                        height: `${10}px`,
-                        animationDelay: `${i * 0.1 + 2}s`
-                      }}
+                      className="w-1 bg-green-400/30 rounded-full"
+                      style={{ height: `${10}px` }}
                     ></div>
                   ))}
                 </div>
@@ -136,9 +132,6 @@ export const Features = () => {
           </Card>
         </div>
       </div>
-
-      {/* Curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-black rounded-t-[50px]"></div>
     </section>
   );
 };

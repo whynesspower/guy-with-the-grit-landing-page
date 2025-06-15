@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 
 export const Testimonials = () => {
   return (
-    <section className="h-screen bg-black text-white relative flex items-center justify-center">
-      {/* Curved top section */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-black rounded-b-[50px]"></div>
-      
+    <section className="py-24 bg-black text-white relative">
       {/* Customer testimonial section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center mb-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-relaxed">
             "Sanas helps us strengthen the relationship with our customers."

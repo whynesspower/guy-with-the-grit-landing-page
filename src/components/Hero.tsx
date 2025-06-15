@@ -4,7 +4,7 @@ import { ArrowRight, Globe } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen bg-gray-100 overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-gray-100 overflow-hidden flex items-center">
       {/* Animated white semicircles with gradient shadows */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full shadow-2xl animate-pulse">

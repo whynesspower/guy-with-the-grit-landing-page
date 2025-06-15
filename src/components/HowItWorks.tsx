@@ -1,12 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const HowItWorks = () => {
   return (
-    <section className="h-screen bg-black text-white relative overflow-hidden flex flex-col justify-center">
-      {/* Curved top section */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-br from-green-100 via-white to-blue-100 rounded-b-[50px]"></div>
-      
+    <section className="py-24 bg-black text-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-4">Our Impact</p>
@@ -139,9 +137,6 @@ export const HowItWorks = () => {
           </div>
         </div>
       </div>
-
-      {/* Curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-black rounded-t-[50px]"></div>
     </section>
   );
 };
