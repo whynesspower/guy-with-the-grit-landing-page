@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -33,7 +34,7 @@ export const Features = () => {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden flex flex-col justify-center">
-      {/* Smooth curved top section */}
+      {/* Clean curved top section */}
       <div className="absolute top-0 left-0 right-0 h-32 overflow-hidden">
         <svg 
           viewBox="0 0 1440 120" 
@@ -43,7 +44,7 @@ export const Features = () => {
           preserveAspectRatio="none"
         >
           <path 
-            d="M0,0 C480,120 960,120 1440,0 L1440,120 L0,120 Z" 
+            d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" 
             fill="url(#gradientFeatures)"
           />
           <defs>
@@ -159,7 +160,7 @@ export const Features = () => {
         </div>
       </div>
 
-      {/* Smooth curved bottom section */}
+      {/* Clean curved bottom section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
         <svg 
           viewBox="0 0 1440 120" 
@@ -169,7 +170,7 @@ export const Features = () => {
           preserveAspectRatio="none"
         >
           <path 
-            d="M0,120 C480,0 960,0 1440,120 L1440,120 L0,120 Z" 
+            d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" 
             fill="#000000"
           />
         </svg>

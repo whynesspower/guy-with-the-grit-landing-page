@@ -5,17 +5,17 @@ import { ArrowRight } from "lucide-react";
 export const CTA = () => {
   return (
     <section className="h-screen bg-white relative overflow-hidden flex items-center justify-center">
-      {/* Smooth curved top section */}
-      <div className="absolute top-0 left-0 right-0 h-24 overflow-hidden">
+      {/* Clean curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-32 overflow-hidden">
         <svg 
-          viewBox="0 0 1440 100" 
+          viewBox="0 0 1440 120" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg" 
           className="w-full h-full"
           preserveAspectRatio="none"
         >
           <path 
-            d="M0,0 C360,100 1080,100 1440,0 L1440,0 L0,0 Z" 
+            d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" 
             fill="#ffffff"
           />
         </svg>
