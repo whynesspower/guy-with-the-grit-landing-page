@@ -1,38 +1,124 @@
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-r from-purple-600 to-blue-600">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to Break Down Language Barriers?
+        <div className="text-center mb-16">
+          <p className="text-gray-600 text-sm uppercase tracking-wider mb-8">Our customers</p>
+          <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
+            Trusted by enterprise<br />
+            and contact centers
           </h2>
-          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of businesses worldwide using Sanas to communicate 
-            seamlessly across languages and cultures.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 text-lg"
-            >
-              Schedule Demo
+        </div>
+
+        {/* Company logos */}
+        <div className="flex justify-center items-center space-x-12 mb-16 opacity-60">
+          <div className="text-2xl font-bold text-gray-400">X</div>
+          <div className="text-lg text-gray-400">hansa cequity</div>
+          <div className="text-lg text-gray-400">GLOWTOUCH</div>
+          <div className="text-lg text-gray-400">OP360</div>
+          <div className="text-lg text-gray-400">GUARDIAN</div>
+          <div className="text-lg text-gray-400">synergize.ai</div>
+          <div className="text-lg text-gray-400">Cap</div>
+        </div>
+
+        {/* Testimonial */}
+        <div className="text-center mb-16">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-gray-600 mb-4">Ganesh Bell | Managing Director, Insight Partners</p>
+            <blockquote className="text-2xl lg:text-3xl font-medium text-black leading-relaxed">
+              "Sanas has cracked the code, offering patented real-time accent conversion and neural network-based voice enhancement systems that 
+              empower businesses to address speech barriers and create more job opportunities."
+            </blockquote>
+          </div>
+          <div className="mt-8">
+            <img 
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" 
+              alt="Ganesh Bell"
+              className="w-16 h-16 rounded-full mx-auto object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Who we serve section */}
+        <div className="mb-16">
+          <p className="text-center text-gray-600 text-sm uppercase tracking-wider mb-12">Who we serve</p>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Contact Centers */}
+            <Card className="bg-black text-white rounded-3xl overflow-hidden border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="flex">
+                  <div className="flex-1 p-8">
+                    <h3 className="text-2xl font-bold mb-4">For Contact Centers</h3>
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Sanas empowers agents by improving call quality and handling, transforming customer experiences and driving 
+                      cost savings and ROI in operations.
+                    </p>
+                    <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black rounded-full">
+                      Learn more <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                  <div className="w-1/2">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" 
+                      alt="Contact center representative"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Enterprises */}
+            <Card className="bg-black text-white rounded-3xl overflow-hidden border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="flex">
+                  <div className="flex-1 p-8">
+                    <h3 className="text-2xl font-bold mb-4">For Enterprises</h3>
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      Sanas breaks down communication barriers, driving greater efficiency and creating opportunities for talent 
+                      sourcing and employment in emerging territories.
+                    </p>
+                    <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black rounded-full">
+                      Learn more <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                  <div className="w-1/2">
+                    <img 
+                      src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop" 
+                      alt="Enterprise professional"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Final CTA */}
+        <div className="text-center bg-gradient-to-br from-green-300 via-green-200 to-blue-200 rounded-3xl py-24 px-8 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/20 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-blue-300/30 rounded-full blur-xl"></div>
+          </div>
+          <div className="relative">
+            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8">
+              Sound good?
+            </h2>
+            <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-12 py-4 text-lg font-semibold">
+              Book a demo
+              <div className="w-3 h-3 bg-green-400 rounded-full ml-3"></div>
             </Button>
           </div>
-          <div className="mt-8 text-purple-100 text-sm">
-            No credit card required • 14-day free trial • Cancel anytime
-          </div>
+          
+          {/* Bottom curved section */}
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-black rounded-t-[50px]"></div>
         </div>
       </div>
     </section>

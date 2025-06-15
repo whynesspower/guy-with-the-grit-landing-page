@@ -1,91 +1,51 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="pt-20 pb-16 lg:pt-32 lg:pb-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-          <div className="lg:col-span-6">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Real-time AI
-                <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Voice Translation
-                </span>
-              </h1>
-              <p className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
-                Break down language barriers in real-time with AI-powered voice translation. 
-                Speak naturally and be understood instantly in any language.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg"
-                >
-                  Try Free Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-3 text-lg"
-                >
-                  Watch Demo
-                </Button>
-              </div>
-              <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  Real-time processing
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  40+ languages
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  99.9% accuracy
-                </div>
-              </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-green-300 via-green-200 to-blue-200 overflow-hidden">
+      {/* Curved background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-300/20 rounded-full blur-2xl"></div>
+      </div>
+      
+      {/* Announcement banner */}
+      <div className="relative pt-20 pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center mb-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 flex items-center space-x-3 shadow-lg">
+              <Globe className="w-5 h-5 text-gray-700" />
+              <span className="text-gray-800 font-medium">NEW! Noise Cancellation with omni-directional capabilities</span>
+              <ArrowRight className="w-4 h-4 text-gray-700" />
             </div>
           </div>
-          
-          <div className="mt-12 lg:mt-0 lg:col-span-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-200/50 backdrop-blur-sm">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-white rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm text-gray-500">Speaking in English</div>
-                      <div className="text-lg font-medium">"Hello, how are you today?"</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-center">
-                    <div className="w-8 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-white rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm text-gray-500">Translated to Spanish</div>
-                      <div className="text-lg font-medium">"Hola, ¿cómo estás hoy?"</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-6xl lg:text-7xl font-bold text-black leading-tight mb-8">
+              Sounds like Magic
+            </h1>
+            <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Experience the world's first real-time speech understanding platform with Accent Translation and
+              Noise Cancellation featuring omni-directional capabilities.
+            </p>
+            
+            <div className="flex justify-center mb-16">
+              <Button 
+                size="lg" 
+                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full shadow-lg flex items-center space-x-3"
+              >
+                <img src="/lovable-uploads/f84854c4-9116-48bc-8733-908684e2cac2.png" alt="Demo" className="w-8 h-8 rounded-full object-cover" />
+                <span>Play Demo</span>
+              </Button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Large curved bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-white rounded-t-[50px]"></div>
     </section>
   );
 };

@@ -1,47 +1,48 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+      <div className="bg-black/90 backdrop-blur-lg rounded-full border border-gray-800">
+        <div className="flex items-center justify-between px-6 py-3">
           <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Sanas
+            <div className="text-white text-xl font-bold flex items-center space-x-2">
+              <ArrowRight className="w-5 h-5" />
+              <span>sanas</span>
             </div>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">
-              Features
+            <a href="#products" className="text-white/80 hover:text-white transition-colors">
+              Products
             </a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-purple-600 transition-colors">
-              How It Works
+            <a href="#solutions" className="text-white/80 hover:text-white transition-colors">
+              Solutions
             </a>
-            <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">
-              Testimonials
+            <a href="#customers" className="text-white/80 hover:text-white transition-colors">
+              Customers
             </a>
-            <a href="#pricing" className="text-gray-700 hover:text-purple-600 transition-colors">
-              Pricing
+            <a href="#resources" className="text-white/80 hover:text-white transition-colors">
+              Resources
+            </a>
+            <a href="#company" className="text-white/80 hover:text-white transition-colors">
+              Company
             </a>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-700 hover:text-purple-600">
-              Log In
-            </Button>
-            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-              Get Started
+          <div className="hidden md:flex items-center">
+            <Button className="bg-white text-black hover:bg-gray-100 rounded-full px-6 py-2 font-medium">
+              Book Demo
             </Button>
           </div>
 
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -49,28 +50,26 @@ export const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-              <a href="#features" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
-                Features
+          <div className="md:hidden border-t border-gray-800">
+            <div className="px-6 py-4 space-y-4">
+              <a href="#products" className="block text-white/80 hover:text-white">
+                Products
               </a>
-              <a href="#how-it-works" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
-                How It Works
+              <a href="#solutions" className="block text-white/80 hover:text-white">
+                Solutions
               </a>
-              <a href="#testimonials" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
-                Testimonials
+              <a href="#customers" className="block text-white/80 hover:text-white">
+                Customers
               </a>
-              <a href="#pricing" className="block px-3 py-2 text-gray-700 hover:text-purple-600">
-                Pricing
+              <a href="#resources" className="block text-white/80 hover:text-white">
+                Resources
               </a>
-              <div className="px-3 py-2 space-y-2">
-                <Button variant="ghost" className="w-full text-gray-700">
-                  Log In
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-                  Get Started
-                </Button>
-              </div>
+              <a href="#company" className="block text-white/80 hover:text-white">
+                Company
+              </a>
+              <Button className="w-full bg-white text-black hover:bg-gray-100 rounded-full mt-4">
+                Book Demo
+              </Button>
             </div>
           </div>
         )}

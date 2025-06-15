@@ -1,77 +1,100 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export const Features = () => {
-  const features = [
-    {
-      title: "Real-time Translation",
-      description: "Instant voice translation with minimal latency for natural conversations.",
-      icon: "🗣️"
-    },
-    {
-      title: "40+ Languages",
-      description: "Support for over 40 languages and dialects with native-like pronunciation.",
-      icon: "🌍"
-    },
-    {
-      title: "AI-Powered Accuracy",
-      description: "Advanced neural networks ensure 99.9% translation accuracy.",
-      icon: "🧠"
-    },
-    {
-      title: "Voice Preservation",
-      description: "Maintain your unique voice characteristics while speaking different languages.",
-      icon: "🎵"
-    },
-    {
-      title: "Enterprise Ready",
-      description: "Scalable infrastructure with enterprise-grade security and compliance.",
-      icon: "🏢"
-    },
-    {
-      title: "Easy Integration",
-      description: "Simple APIs and SDKs for seamless integration into your applications.",
-      icon: "⚡"
-    }
-  ];
-
   return (
-    <section id="features" className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features for
-            <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Global Communication
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our AI-powered voice translation technology breaks down language barriers 
-            and enables seamless communication across cultures.
-          </p>
+    <section className="py-24 bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden">
+      {/* Curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-white rounded-b-[50px]"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-8">
+          <p className="text-gray-600 text-sm uppercase tracking-wider mb-4">What we do</p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md bg-gradient-to-br from-white to-gray-50"
-            >
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">{feature.icon}</span>
+
+        <div className="text-center mb-16">
+          <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
+            Sanas delivers crystal<br />
+            clear communication<br />
+            with <span className="text-gray-400">real-time speech-<br />
+            to-speech AI technology.</span>
+          </h2>
+        </div>
+
+        {/* Two main feature cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Accent Translation Card */}
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl">
+            <CardContent className="p-0">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-6 h-6 bg-white rounded-full"></div>
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 text-base">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+                <h3 className="text-2xl font-bold mb-4">Accent Translation</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Sanas modulates accents in real-time while preserving unique voices and emotions to ensure 
+                  every interaction is natural and authentic.
+                </p>
+              </div>
+              
+              {/* Circular visualization */}
+              <div className="flex justify-center mt-12">
+                <div className="relative">
+                  <div className="w-32 h-32 border-2 border-green-400 rounded-full flex items-center justify-center">
+                    <div className="w-24 h-24 border border-green-400/50 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center">
+                        <ArrowRight className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Noise Cancellation Card */}
+          <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl">
+            <CardContent className="p-0">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-6 h-6 bg-white rounded-full"></div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Noise Cancellation</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Sanas Noise Cancellation with omni-directional capabilities and speech enhancement eliminates 
+                  noises and ambient voices from every angle, in any environment.
+                </p>
+              </div>
+              
+              {/* Audio visualization */}
+              <div className="flex justify-center items-center mt-12">
+                <div className="flex items-center space-x-1">
+                  {[...Array(20)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="w-1 bg-green-400 rounded-full"
+                      style={{ 
+                        height: `${Math.random() * 40 + 10}px`,
+                        opacity: Math.random() * 0.8 + 0.2 
+                      }}
+                    ></div>
+                  ))}
+                  <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mx-4">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </div>
+                  {[...Array(20)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="w-1 bg-green-400/30 rounded-full"
+                      style={{ height: `${10}px` }}
+                    ></div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
