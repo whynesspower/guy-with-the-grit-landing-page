@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 export const Testimonials = () => {
@@ -20,12 +21,12 @@ export const Testimonials = () => {
           <div className="max-w-4xl mx-auto">
             {/* Main testimonial quote */}
             <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-relaxed text-white drop-shadow-2xl">
-              "Sanas helps us strengthen the relationship with our customers."
+              "SalesKat transformed how we engage with prospects and close deals."
             </h2>
             
             {/* Attribution */}
             <div className="flex items-center justify-center space-x-3">
-              <span className="text-white/90 font-medium text-lg drop-shadow-lg">Ishita, India</span>
+              <span className="text-white/90 font-medium text-lg drop-shadow-lg">Marcus, Sales Director</span>
               <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-400 rounded-full shadow-lg"></div>
             </div>
           </div>

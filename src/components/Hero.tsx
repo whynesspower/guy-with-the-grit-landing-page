@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe } from "lucide-react";
 
@@ -44,11 +45,11 @@ export const Hero = () => {
           {/* Main content centered over circles */}
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-6xl lg:text-7xl font-bold text-black leading-tight mb-8">
-              Sounds like Magic
+              Close More Deals
             </h1>
             <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Experience the world's first real-time speech understanding platform with Accent Translation and
-              Noise Cancellation featuring omni-directional capabilities.
+              Transform your sales performance with SalesKat's real-time AI assistance. 
+              Get intelligent insights, conversation guidance, and automated follow-ups during every sales call.
             </p>
             
             {/* Play Demo button */}
@@ -58,7 +59,7 @@ export const Hero = () => {
                 className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full shadow-lg flex items-center space-x-3"
               >
                 <img src="/lovable-uploads/f84854c4-9116-48bc-8733-908684e2cac2.png" alt="Demo" className="w-8 h-8 rounded-full object-cover" />
-                <span>Play Demo</span>
+                <span>Watch Demo</span>
               </Button>
             </div>
           </div>

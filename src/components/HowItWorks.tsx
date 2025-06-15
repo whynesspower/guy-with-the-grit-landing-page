@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -25,31 +26,31 @@ export const HowItWorks = () => {
         <div className="text-center mb-16">
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-6">Building a more</p>
           <h2 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            understanding world
+            successful sales team
           </h2>
         </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {/* Enhance Productivity Card */}
+          {/* Boost Revenue Card */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 flex flex-col justify-between min-h-[400px]">
             <div>
               <h3 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                Enhance productivity
+                Boost revenue
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Improve customer satisfaction (CSAT) and average handling time (AHT) by delivering a 
-                better overall experience.
+                Increase deal closure rates and average deal size with AI-powered sales assistance 
+                that helps identify opportunities and overcome objections.
               </p>
             </div>
             
-            {/* CSAT Visualization */}
+            {/* Revenue Visualization */}
             <div className="mt-8">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" 
-                    alt="Team member"
+                    alt="Sales rep"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -57,9 +58,9 @@ export const HowItWorks = () => {
                   <div className="bg-gray-700/50 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-green-400 flex items-center">
-                        <span className="text-xl mr-2">▲</span> Improved
+                        <span className="text-xl mr-2">▲</span> Increased
                       </span>
-                      <span className="text-2xl font-bold">CSAT</span>
+                      <span className="text-2xl font-bold">DEALS</span>
                     </div>
                     <div className="w-full bg-gray-600 rounded-full h-2">
                       <div className="bg-green-400 h-2 rounded-full w-4/5 transition-all duration-1000"></div>
@@ -71,9 +72,9 @@ export const HowItWorks = () => {
               <div className="bg-gray-700/50 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-green-400 flex items-center">
-                    <span className="text-xl mr-2">▼</span> Reduced
+                    <span className="text-xl mr-2">▲</span> Higher
                   </span>
-                  <span className="text-2xl font-bold">AHT</span>
+                  <span className="text-2xl font-bold">REVENUE</span>
                 </div>
                 <div className="w-full bg-gray-600 rounded-full h-2">
                   <div className="bg-green-400 h-2 rounded-full w-3/5 transition-all duration-1000"></div>
@@ -82,14 +83,14 @@ export const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Boost Satisfaction Card */}
+          {/* Enhance Performance Card */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 relative overflow-hidden min-h-[400px]">
             <div className="relative z-10">
               <h3 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                Boost satisfaction
+                Enhance performance
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Elevate your employee experience (97% adoption rate across our current customer base).
+                Empower your sales team with 95% improved call effectiveness and real-time coaching.
               </p>
             </div>
             
@@ -97,7 +98,7 @@ export const HowItWorks = () => {
             <div className="relative z-10 mb-6">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=300&fit=crop" 
-                alt="Professional woman using technology"
+                alt="Sales professional using AI technology"
                 className="w-full h-48 object-cover rounded-2xl"
               />
               
@@ -106,8 +107,8 @@ export const HowItWorks = () => {
                 <div className="flex items-center space-x-3">
                   <span className="text-green-500 text-2xl">▲</span>
                   <div>
-                    <p className="text-gray-600 text-sm font-medium">Adoption rate</p>
-                    <p className="text-black text-3xl font-bold">97%</p>
+                    <p className="text-gray-600 text-sm font-medium">Call effectiveness</p>
+                    <p className="text-black text-3xl font-bold">95%</p>
                   </div>
                 </div>
               </div>
@@ -117,59 +118,59 @@ export const HowItWorks = () => {
 
         {/* Additional Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
-          {/* Reduce Stress */}
+          {/* Reduce Rejections */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-4">Reduce stress</h3>
+            <h3 className="text-2xl font-bold mb-4">Reduce rejections</h3>
             <p className="text-gray-300 leading-relaxed">
-              Eliminate tension and conflict by reducing repetition, clarification delays and 
-              miscommunication.
+              Handle objections effectively with AI-suggested responses and turn potential 
+              rejections into opportunities.
             </p>
           </div>
 
-          {/* Increase Confidence */}
+          {/* Build Confidence */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-4">Increase confidence</h3>
+            <h3 className="text-2xl font-bold mb-4">Build confidence</h3>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Empower people to be bold, authentic and speak up.
+              Empower sales reps to be more confident and persuasive in every conversation.
             </p>
             
             <div className="grid grid-cols-2 gap-3 mb-4">
               <img 
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" 
-                alt="Team member"
+                alt="Sales team member"
                 className="w-12 h-12 rounded-full object-cover"
               />
               <img 
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" 
-                alt="Team member"
+                alt="Sales team member"
                 className="w-12 h-12 rounded-full object-cover"
               />
               <img 
                 src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=80&h=80&fit=crop&crop=face" 
-                alt="Team member"
+                alt="Sales team member"
                 className="w-12 h-12 rounded-full object-cover"
               />
               <img 
                 src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=80&h=80&fit=crop&crop=face" 
-                alt="Team member"
+                alt="Sales team member"
                 className="w-12 h-12 rounded-full object-cover"
               />
             </div>
           </div>
 
-          {/* Fluidity Status */}
+          {/* AI Assistant Status */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-4">Fluency status</h3>
+              <h3 className="text-2xl font-bold mb-4">SalesKat status</h3>
               <div className="bg-gray-700/50 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-white text-sm">Sanas on</span>
+                  <span className="text-white text-sm">SalesKat active</span>
                   <div className="w-12 h-6 bg-green-400 rounded-full relative">
                     <div className="w-5 h-5 bg-white rounded-full absolute right-0.5 top-0.5 shadow-sm"></div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-gray-400 text-sm">Fluidity</span>
+                  <span className="text-gray-400 text-sm">AI Assistant</span>
                   <span className="text-green-400 text-lg">✓</span>
                 </div>
               </div>

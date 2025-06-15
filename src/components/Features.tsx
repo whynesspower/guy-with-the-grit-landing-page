@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const Features = () => {
   const [visibleWords, setVisibleWords] = useState(0);
-  const text = "Sanas delivers crystal clear communication with real-time speech-to-speech AI technology.";
+  const text = "SalesKat delivers intelligent sales assistance with real-time AI conversation analysis and guidance.";
   const words = text.split(' ');
 
   useEffect(() => {
@@ -80,17 +80,17 @@ export const Features = () => {
 
         {/* Two main feature cards with increased height */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Accent Translation Card */}
+          {/* Real-time Coaching Card */}
           <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[480px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
               <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Accent Translation</h3>
+                <h3 className="text-2xl font-bold mb-4">Real-time Coaching</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Sanas modulates accents in real-time while preserving unique voices and emotions to ensure 
-                  every interaction is natural and authentic.
+                  SalesKat provides instant conversation insights and coaching during sales calls to help you 
+                  handle objections, identify buying signals, and close more deals.
                 </p>
               </div>
               
@@ -112,17 +112,17 @@ export const Features = () => {
             </CardContent>
           </Card>
 
-          {/* Noise Cancellation Card */}
+          {/* Smart Analytics Card */}
           <Card className="bg-black text-white rounded-3xl p-8 relative overflow-hidden border-0 shadow-2xl h-[480px] flex flex-col justify-between">
             <CardContent className="p-0 flex flex-col h-full">
               <div className="mb-8">
                 <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
                   <div className="w-6 h-6 bg-white rounded-full"></div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Noise Cancellation</h3>
+                <h3 className="text-2xl font-bold mb-4">Smart Analytics</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Sanas Noise Cancellation with omni-directional capabilities and speech enhancement eliminates 
-                  noises and ambient voices from every angle, in any environment.
+                  Advanced AI analyzes conversation patterns, sentiment, and engagement to provide actionable 
+                  insights and improve your sales performance with every call.
                 </p>
               </div>
               

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const WORDS = [
-  "Empowerment",
-  "Magic",
-  "Understanding",
-  "Language",
-  "Clarity",
-  "Accuracy",
-  "Opportunity",
+  "Success",
+  "Growth",
+  "Performance",
+  "Revenue",
+  "Opportunities",
+  "Results",
+  "Achievement",
 ];
 
 // Each vertical word component
@@ -82,10 +82,6 @@ const FooterCarousel: React.FC = () => {
     }, 16); // ~60fps
     return () => clearInterval(interval);
   }, [offset, wordWidth]);
-
-  // Always only one word highlighted (those from primary set, not from repeats)
-  // We only highlight the word that is centered in the viewport,
-  // If centered highlight index matches the main set, highlight that
 
   return (
     <div
@@ -178,13 +174,13 @@ export const Footer = () => {
         {/* Footer text and links */}
         <div className="flex flex-col items-center gap-2 mb-2">
           <div className="text-sm text-zinc-300 font-sans mb-1">
-            © 2025 Sanas. All rights reserved.
+            © 2025 SalesKat. All rights reserved.
           </div>
           <div className="flex flex-wrap gap-4 justify-center text-xs text-zinc-400">
             <a href="#" className="hover:underline">Privacy</a>
-            <a href="#" className="hover:underline">DPA</a>
-            <a href="#" className="hover:underline">Terms of Use</a>
+            <a href="#" className="hover:underline">Terms of Service</a>
             <a href="#" className="hover:underline">Cookie Policy</a>
+            <a href="#" className="hover:underline">Support</a>
             <a href="#" className="hover:underline">Contact</a>
           </div>
         </div>

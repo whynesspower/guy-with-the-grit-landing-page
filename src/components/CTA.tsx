@@ -9,10 +9,10 @@ export const CTA = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
-            Ready to experience the magic?
+            Ready to close more deals?
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of companies already using Sanas to transform their communication.
+            Join thousands of sales teams already using SalesKat to transform their sales performance.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -28,7 +28,7 @@ export const CTA = () => {
               size="lg" 
               className="border-black text-black hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full"
             >
-              Try for Free
+              Start Free Trial
             </Button>
           </div>
         </div>
