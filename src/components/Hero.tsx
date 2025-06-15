@@ -7,27 +7,26 @@ export const Hero = () => {
     <section className="relative h-screen bg-gray-100 overflow-hidden flex items-center">
       {/* Animated concentric semi-circles with gradient shadows */}
       <div className="absolute inset-0 flex items-end justify-center z-0">
-        <div className="relative">
+        <div className="relative w-full flex justify-center">
           {/* Largest semi-circle */}
           <div 
-            className="absolute bottom-0 w-[72rem] h-[36rem] bg-white rounded-t-full shadow-2xl animate-pulse"
-            style={{ left: '50%', transform: 'translateX(-50%)' }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[72rem] h-[36rem] bg-white rounded-t-full shadow-2xl animate-pulse"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-t-full blur-2xl"></div>
           </div>
           
           {/* Medium semi-circle */}
           <div 
-            className="absolute bottom-0 w-[60rem] h-[30rem] bg-white rounded-t-full shadow-2xl animate-pulse"
-            style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '0.5s' }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60rem] h-[30rem] bg-white rounded-t-full shadow-2xl animate-pulse"
+            style={{ animationDelay: '0.5s' }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-300/50 to-transparent rounded-t-full blur-2xl"></div>
           </div>
           
           {/* Smallest semi-circle */}
           <div 
-            className="absolute bottom-0 w-[48rem] h-[24rem] bg-white rounded-t-full shadow-xl animate-pulse"
-            style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '1s' }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[48rem] h-[24rem] bg-white rounded-t-full shadow-xl animate-pulse"
+            style={{ animationDelay: '1s' }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-200/40 to-blue-200/40 rounded-t-full blur-xl"></div>
           </div>
