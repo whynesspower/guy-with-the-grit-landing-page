@@ -5,16 +5,32 @@ import { ArrowRight, Globe } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="relative h-screen bg-gray-100 overflow-hidden flex items-center">
-      {/* Animated white semicircles with gradient shadows */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full shadow-2xl animate-pulse">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-full blur-2xl"></div>
-        </div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white rounded-full shadow-2xl animate-pulse" style={{ animationDelay: '1s' }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-300/50 to-transparent rounded-full blur-2xl"></div>
-        </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full shadow-xl animate-pulse" style={{ animationDelay: '2s' }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-green-200/40 to-blue-200/40 rounded-full blur-xl"></div>
+      {/* Animated concentric semi-circles with gradient shadows */}
+      <div className="absolute inset-0 flex items-end justify-center">
+        <div className="relative">
+          {/* Largest semi-circle */}
+          <div 
+            className="absolute bottom-0 w-96 h-48 bg-white rounded-t-full shadow-2xl animate-pulse"
+            style={{ left: '50%', transform: 'translateX(-50%)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-t-full blur-2xl"></div>
+          </div>
+          
+          {/* Medium semi-circle */}
+          <div 
+            className="absolute bottom-0 w-80 h-40 bg-white rounded-t-full shadow-2xl animate-pulse"
+            style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '0.5s' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-300/50 to-transparent rounded-t-full blur-2xl"></div>
+          </div>
+          
+          {/* Smallest semi-circle */}
+          <div 
+            className="absolute bottom-0 w-64 h-32 bg-white rounded-t-full shadow-xl animate-pulse"
+            style={{ left: '50%', transform: 'translateX(-50%)', animationDelay: '1s' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-green-200/40 to-blue-200/40 rounded-t-full blur-xl"></div>
+          </div>
         </div>
       </div>
       
