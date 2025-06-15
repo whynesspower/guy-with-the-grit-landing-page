@@ -1,11 +1,13 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="h-screen bg-white relative flex flex-col justify-center">
+      {/* Curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-black rounded-b-[50px]"></div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-gray-600 text-sm uppercase tracking-wider mb-8">Our customers</p>
