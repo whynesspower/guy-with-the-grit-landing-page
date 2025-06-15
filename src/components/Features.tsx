@@ -2,8 +2,37 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const Features = () => {
+  const [visibleWords, setVisibleWords] = useState(0);
+  const text = "Sanas delivers crystal clear communication with real-time speech-to-speech AI technology.";
+  const words = text.split(' ');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById('animated-text');
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+        
+        // Calculate how much of the element is visible
+        const visiblePercentage = Math.max(0, Math.min(1, (windowHeight - elementTop) / (windowHeight + elementHeight)));
+        
+        // Calculate how many words should be visible based on scroll
+        const wordsToShow = Math.floor(visiblePercentage * words.length);
+        setVisibleWords(wordsToShow);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [words.length]);
+
   return (
     <section className="py-24 bg-gradient-to-br from-green-100 via-white to-blue-100 relative overflow-hidden">
       {/* Curved top section */}
@@ -15,11 +44,17 @@ export const Features = () => {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
-            Sanas delivers crystal<br />
-            clear communication<br />
-            with <span className="text-gray-400">real-time speech-<br />
-            to-speech AI technology.</span>
+          <h2 id="animated-text" className="text-5xl lg:text-6xl font-bold leading-tight mb-8">
+            {words.map((word, index) => (
+              <span
+                key={index}
+                className={`transition-colors duration-300 ${
+                  index < visibleWords ? 'text-black' : 'text-gray-400'
+                }`}
+              >
+                {word}{' '}
+              </span>
+            ))}
           </h2>
         </div>
 
