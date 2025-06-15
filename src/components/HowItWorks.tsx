@@ -1,11 +1,24 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const HowItWorks = () => {
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="h-screen bg-black text-white relative overflow-hidden flex flex-col justify-center">
+      {/* Curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-32">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="url(#gradient2)"/>
+          <defs>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#dcfce7" />
+              <stop offset="50%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#dbeafe" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center">
         <div className="text-center mb-8">
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-4">Our Impact</p>
         </div>
@@ -136,6 +149,13 @@ export const HowItWorks = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Curved bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" fill="#000000"/>
+        </svg>
       </div>
     </section>
   );

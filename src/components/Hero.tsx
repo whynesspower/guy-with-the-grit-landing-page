@@ -4,7 +4,7 @@ import { ArrowRight, Globe } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gray-100 overflow-hidden flex items-center">
+    <section className="relative h-screen bg-gray-100 overflow-hidden flex items-center">
       {/* Animated white semicircles with gradient shadows */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full shadow-2xl animate-pulse">
@@ -52,7 +52,18 @@ export const Hero = () => {
       </div>
 
       {/* Large curved bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-white rounded-t-[50px]"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-br from-green-100 via-white to-blue-100">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M0,120 C480,20 960,20 1440,120 L1440,120 L0,120 Z" fill="url(#gradient1)"/>
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#dcfce7" />
+              <stop offset="50%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#dbeafe" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </section>
   );
 };

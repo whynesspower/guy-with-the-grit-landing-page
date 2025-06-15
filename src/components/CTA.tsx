@@ -1,12 +1,18 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="h-screen bg-white flex flex-col justify-center">
+      {/* Curved top section */}
+      <div className="absolute top-0 left-0 right-0 h-32">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M0,0 C480,100 960,100 1440,0 L1440,0 L0,0 Z" fill="#000000"/>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center">
         <div className="text-center mb-16">
           <p className="text-gray-600 text-sm uppercase tracking-wider mb-8">Our customers</p>
           <h2 className="text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
@@ -118,7 +124,11 @@ export const CTA = () => {
           </div>
           
           {/* Bottom curved section */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-black rounded-t-[50px]"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-16">
+            <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              <path d="M0,64 C480,-21 960,-21 1440,64 L1440,64 L0,64 Z" fill="#000000"/>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
