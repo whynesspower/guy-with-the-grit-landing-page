@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -51,6 +50,10 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    window.open('https://saleskat.com', '_blank');
+  };
+
   return (
     <header className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-800 ease-out">
       <div 
@@ -68,7 +71,10 @@ export const Header = () => {
             onMouseEnter={() => setIsMenuOpen(true)}
             onMouseLeave={() => setIsMenuOpen(false)}
           >
-            <Button className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-3 font-medium text-sm transition-all duration-300">
+            <Button 
+              onClick={handleLinkClick}
+              className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-3 font-medium text-sm transition-all duration-300"
+            >
               Book Demo
             </Button>
             
@@ -78,26 +84,26 @@ export const Header = () => {
                   <div className="pb-2 mb-4 border-b border-gray-800">
                     <div className="text-white font-semibold text-sm">Navigation</div>
                   </div>
-                  <a href="#products" className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group">
+                  <button onClick={handleLinkClick} className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group w-full text-left">
                     <span>Products</span>
                     <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                  </a>
-                  <a href="#solutions" className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group">
+                  </button>
+                  <button onClick={handleLinkClick} className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group w-full text-left">
                     <span>Solutions</span>
                     <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                  </a>
-                  <a href="#customers" className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group">
+                  </button>
+                  <button onClick={handleLinkClick} className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group w-full text-left">
                     <span>Customers</span>
                     <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                  </a>
-                  <a href="#resources" className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group">
+                  </button>
+                  <button onClick={handleLinkClick} className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group w-full text-left">
                     <span>Resources</span>
                     <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                  </a>
-                  <a href="#company" className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group">
+                  </button>
+                  <button onClick={handleLinkClick} className="flex items-center justify-between py-3 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200 group w-full text-left">
                     <span>Company</span>
                     <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                  </a>
+                  </button>
                 </div>
               </div>
             )}
@@ -108,7 +114,7 @@ export const Header = () => {
             onMouseEnter={() => setIsMenuOpen(true)}
             onMouseLeave={() => setIsMenuOpen(false)}
           >
-            <div className="flex items-center justify-between min-w-96"
+            <div className="flex items-center justify-between w-full max-w-6xl mx-auto"
               style={{
                 opacity: 1 - scrollProgress * 1.2,
                 transform: `translateY(${scrollProgress * 8}px)`
@@ -121,27 +127,27 @@ export const Header = () => {
                 </div>
               </div>
               
-              <nav className="hidden md:flex items-center space-x-10"
+              <nav className="hidden md:flex items-center space-x-12 mx-16"
                 style={{
                   opacity: 1 - scrollProgress * 1.5,
                   transform: `translateY(${scrollProgress * 15}px)`
                 }}
               >
-                <a href="#products" className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+                <button onClick={handleLinkClick} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
                   Products
-                </a>
-                <a href="#solutions" className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+                </button>
+                <button onClick={handleLinkClick} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
                   Solutions
-                </a>
-                <a href="#customers" className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+                </button>
+                <button onClick={handleLinkClick} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
                   Customers
-                </a>
-                <a href="#resources" className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+                </button>
+                <button onClick={handleLinkClick} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
                   Resources
-                </a>
-                <a href="#company" className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+                </button>
+                <button onClick={handleLinkClick} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
                   Company
-                </a>
+                </button>
               </nav>
 
               <div className="hidden md:flex items-center"
@@ -149,7 +155,10 @@ export const Header = () => {
                   opacity: 1 - scrollProgress * 0.3
                 }}
               >
-                <Button className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-3 font-medium transition-all duration-300">
+                <Button 
+                  onClick={handleLinkClick}
+                  className="bg-white text-black hover:bg-gray-100 rounded-full px-10 py-3 font-medium transition-all duration-300"
+                >
                   Book Demo
                 </Button>
               </div>
@@ -163,43 +172,43 @@ export const Header = () => {
                     <div className="text-white/60 text-sm mt-1">Explore our platform</div>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
-                    <a href="#products" className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group">
+                    <button onClick={handleLinkClick} className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group w-full text-left">
                       <div>
                         <div className="font-medium">Products</div>
                         <div className="text-xs text-white/50 mt-1">Our solutions</div>
                       </div>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
-                    <a href="#solutions" className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group">
+                    </button>
+                    <button onClick={handleLinkClick} className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group w-full text-left">
                       <div>
                         <div className="font-medium">Solutions</div>
                         <div className="text-xs text-white/50 mt-1">Use cases</div>
                       </div>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
-                    <a href="#customers" className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group">
+                    </button>
+                    <button onClick={handleLinkClick} className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group w-full text-left">
                       <div>
                         <div className="font-medium">Customers</div>
                         <div className="text-xs text-white/50 mt-1">Success stories</div>
                       </div>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
-                    <a href="#resources" className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group">
+                    </button>
+                    <button onClick={handleLinkClick} className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group w-full text-left">
                       <div>
                         <div className="font-medium">Resources</div>
                         <div className="text-xs text-white/50 mt-1">Learn more</div>
                       </div>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
+                    </button>
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-800">
-                    <a href="#company" className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group">
+                    <button onClick={handleLinkClick} className="flex items-center justify-between p-4 text-white/80 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200 group w-full text-left">
                       <div>
                         <div className="font-medium">Company</div>
                         <div className="text-xs text-white/50 mt-1">About us</div>
                       </div>
                       <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
